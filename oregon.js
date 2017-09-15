@@ -22,19 +22,17 @@
             this.isHealthy = isHealthy;
         }
         Traveler.prototype.hunt = function () {
-            var chance = getRandomIntInclusive(1, 100);
-            if (chance > 50) {
-                this.food = this.food + 100;
+            if (getRandomIntInclusive(1, 100) > 50) {
+                this.food += 100;
             }
             return this.food;
         };
         Traveler.prototype.eat = function () {
-            if (this.food < 20) {
-                return this.isHealthy = false;
+            if (this.food >= 20) {
+                this.food -= 20;
             }
-            else if (this.food > 0) {
-                this.food = this.food - 20;
-                return this.isHealthy = true;
+            else {
+                this.isHealthy = false;
             }
             return this.isHealthy;
         };
@@ -78,6 +76,23 @@
         return Wagon;
     }());
     console.log("\n");
+    console.log("    ÛÛÛÛÛÛÛ    ÛÛÛÛÛÛÛÛÛÛÛ   ÛÛÛÛÛÛÛÛÛÛ   ÛÛÛÛÛÛÛÛÛ     ÛÛÛÛÛÛÛ    ÛÛÛÛÛÛ   ÛÛÛÛÛ ");
+    console.log("  ÛÛÛ°°°°°ÛÛÛ °°ÛÛÛ°°°°°ÛÛÛ °°ÛÛÛ°°°°°Û  ÛÛÛ°°°°°ÛÛÛ  ÛÛÛ°°°°°ÛÛÛ °°ÛÛÛÛÛÛ °°ÛÛÛ ");
+    console.log(" ÛÛÛ     °°ÛÛÛ °ÛÛÛ    °ÛÛÛ  °ÛÛÛ  Û °  ÛÛÛ     °°°  ÛÛÛ     °°ÛÛÛ °ÛÛÛ°ÛÛÛ °ÛÛÛ ");
+    console.log("°ÛÛÛ      °ÛÛÛ °ÛÛÛÛÛÛÛÛÛÛ   °ÛÛÛÛÛÛ   °ÛÛÛ         °ÛÛÛ      °ÛÛÛ °ÛÛÛ°°ÛÛÛ°ÛÛÛ ");
+    console.log("°ÛÛÛ      °ÛÛÛ °ÛÛÛ°°°°°ÛÛÛ  °ÛÛÛ°°Û   °ÛÛÛ    ÛÛÛÛÛ°ÛÛÛ      °ÛÛÛ °ÛÛÛ °°ÛÛÛÛÛÛ ");
+    console.log("°°ÛÛÛ     ÛÛÛ  °ÛÛÛ    °ÛÛÛ  °ÛÛÛ °   Û°°ÛÛÛ  °°ÛÛÛ °°ÛÛÛ     ÛÛÛ  °ÛÛÛ  °°ÛÛÛÛÛ  ");
+    console.log(" °°°ÛÛÛÛÛÛÛ°   ÛÛÛÛÛ   ÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛ °°ÛÛÛÛÛÛÛÛÛ  °°°ÛÛÛÛÛÛÛ°   ÛÛÛÛÛ  °°ÛÛÛÛÛ ");
+    console.log("   °°°°°°°    °°°°°   °°°°° °°°°°°°°°°   °°°°°°°°°     °°°°°°°    °°°°°    °°°°° ");
+    console.log("             ÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛ     ÛÛÛÛÛÛÛÛÛ   ÛÛÛÛÛ ÛÛÛÛÛ ");
+    console.log("            °Û°°°ÛÛÛ°°°Û°°ÛÛÛ°°°°°ÛÛÛ   ÛÛÛ°°°°°ÛÛÛ °°ÛÛÛ °°ÛÛÛ  ");
+    console.log("            °   °ÛÛÛ  °  °ÛÛÛ    °ÛÛÛ  °ÛÛÛ    °ÛÛÛ  °ÛÛÛ  °ÛÛÛ  ");
+    console.log("                °ÛÛÛ     °ÛÛÛÛÛÛÛÛÛÛ   °ÛÛÛÛÛÛÛÛÛÛÛ  °ÛÛÛ  °ÛÛÛ    ");
+    console.log("                °ÛÛÛ     °ÛÛÛ°°°°°ÛÛÛ  °ÛÛÛ°°°°°ÛÛÛ  °ÛÛÛ  °ÛÛÛ     ");
+    console.log("                °ÛÛÛ     °ÛÛÛ    °ÛÛÛ  °ÛÛÛ    °ÛÛÛ  °ÛÛÛ  °ÛÛÛ      Û");
+    console.log("                ÛÛÛÛÛ    ÛÛÛÛÛ   ÛÛÛÛÛ ÛÛÛÛÛ   ÛÛÛÛÛ ÛÛÛÛÛ ÛÛÛÛÛÛÛÛÛÛÛ ");
+    console.log("                °°°°°    °°°°°   °°°°° °°°°°   °°°°° °°°°° °°°°°°°°°°° ");
+    console.log("\n");
     console.log("\n");
     console.log("Here are the five travelers: \n");
     //creating 5 travelers
@@ -92,23 +107,22 @@
     console.log(Traveler4);
     console.log(Traveler5);
     console.log("\n");
-    console.log("Here's the wagon: \n");
     //creating wagon
     var Wagon1 = new Wagon(4);
     console.log(Wagon1);
     console.log("\n");
     //3 travelers eating and setting health
     console.log(Traveler2.name + " ate and their isHealthy status is: " + Traveler2.eat());
-    console.log(Traveler4.name + " ate and their isHealthy status is: " + Traveler2.eat());
-    console.log(Traveler5.name + " ate and their isHealthy status is: " + Traveler2.eat());
+    console.log(Traveler4.name + " ate and their isHealthy status is: " + Traveler4.eat());
+    console.log(Traveler5.name + " ate and their isHealthy status is: " + Traveler5.eat());
     // console.log("Here's everyone after eating: \n");
     // console.log(Traveler2);
     // console.log(Traveler4);
     // console.log(Traveler5);
     console.log("Here's everyone after hunting: \n");
     //2 travelers hunting
-    console.log(Traveler2.name + " started with " + Traveler2.food + " food. Now has " + Traveler2.hunt() + " food after hunting");
-    console.log(Traveler4.name + " started with " + Traveler4.food + " food. Now has " + Traveler4.hunt() + " food after hunting");
+    console.log(Traveler1.name + " started with " + Traveler1.food + " food. Now has " + Traveler1.hunt() + " food after hunting");
+    console.log(Traveler3.name + " started with " + Traveler3.food + " food. Now has " + Traveler3.hunt() + " food after hunting");
     console.log("\n");
     //passenger array
     var wagonPassengers = [Traveler1, Traveler2, Traveler3, Traveler4, Traveler5];
