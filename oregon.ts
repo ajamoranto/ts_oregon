@@ -161,25 +161,20 @@
 
         console.log("\n");
         //3 travelers eating and setting health
-        Traveler2.eat();
-        Traveler4.eat();
-        Traveler5.eat();
+        console.log(Traveler2.name + " ate and their isHealthy status is: " + Traveler2.eat());
+        console.log(Traveler4.name + " ate and their isHealthy status is: " + Traveler2.eat());
+        console.log(Traveler5.name + " ate and their isHealthy status is: " + Traveler2.eat());
 
-        console.log("Here's everyone after eating: \n");
+        // console.log("Here's everyone after eating: \n");
 
-        console.log(Traveler2);
-        console.log(Traveler4);
-        console.log(Traveler5);
+        // console.log(Traveler2);
+        // console.log(Traveler4);
+        // console.log(Traveler5);
 
         console.log("Here's everyone after hunting: \n");
         //2 travelers hunting
-        Traveler2.hunt();
-        Traveler4.hunt();
-
-        console.log("\n");
-
-        console.log(Traveler2);
-        console.log(Traveler4);
+        console.log(Traveler2.name + " started with " + Traveler2.food + " food. Now has " + Traveler2.hunt() + " food after hunting");
+        console.log(Traveler4.name + " started with " + Traveler4.food + " food. Now has " + Traveler4.hunt() + " food after hunting");
 
         console.log("\n");
         //passenger array
@@ -197,12 +192,8 @@
 
         console.log("\n");
         //checking quarantined status
-        Wagon1.isQuarantined();
-
         console.log("Is the wagon quarantined? " + Wagon1.isQuarantined());
         //getting total food on wagon
-        Wagon1.getFood();
-
         console.log("Total food from the wagon: " + Wagon1.getFood());
 
         console.log("\n");
